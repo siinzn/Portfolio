@@ -1,2 +1,6 @@
 /* Import the complete Tailwind v4 CSS */
 @import "tailwindcss";
+
+.prose {
+  font-family: var(--font-inter), serif;
+}

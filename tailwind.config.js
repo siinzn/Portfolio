@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx,md}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/**/*.{md}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        'cormorant-garamond': ['var(--font-cormorant-garamond)', 'serif'],
-        'poppins': ['var(--font-poppins)', 'sans-serif']
+        "cormorant-garamond": ["var(--font-cormorant-garamond)", "serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
       },
     },
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/typography")],
+};

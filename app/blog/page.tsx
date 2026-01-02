@@ -1,37 +1,58 @@
-import { getSortBlogs } from "@/lib/blog"
+import { getSortBlogs } from "@/lib/blog";
 import Link from "next/link";
 
 const Blogpage = () => {
   const blogs = getSortBlogs();
+
   return (
-      <section className="mx-auto w-11/12 flex flex-col gap-16 mb-20">
-        <header 
-          className="text-6xl text-neutral-900 text-center" style={{ fontFamily: "var(--font-cormorant-garamond), serif", fontWeight: 300 }}>
-          <h1>
-            Personal blogs
-          </h1>
-        </header>
+    <section className="mx-auto w-11/12 max-w-6xl flex flex-col gap-16 mb-20 mt-15">
+      <header
+        className="text-4xl text-neutral-900 text-center pt-5"
+        style={{ fontFamily: "var(--font-cormorant-garamond), serif" }}
+      >
+        <h1 className="font-extrabold">Personal blogs</h1>
+      </header>
 
-        <section className="md:grid md:grid-cols flex flex-col gap-10">
-          {blogs.map((blog, id) => (
-            <Link 
-              href={`/blog/${blog.id}`} 
-              key={id}
-              className="p-10 bg-neutral-400 rounded-xl"
-              style={{ fontFamily: "var(--font-cormorant-garamond), serif", fontWeight: 400 }}
-              >
-              <div className="flex flex-row items-center justify-between">
-                <h1 className="text-3xl">{blog.title}</h1>
-                <p>{blog.date}</p>
-              </div>
-              <p className="" style={{fontFamily : "var(--font-poppins), serif", fontWeight: 200}}>
-                {blog.description}
-              </p>
-            </Link>
-          ))}
-        </section>
+      <section className="flex flex-col gap-10">
+        {blogs.map((blog) => (
+          <Link
+            href={`/blog/${blog.id}`}
+            key={blog.id}
+            className="
+              block
+              w-full
+              rounded-xl
+              border border-neutral-800
+              bg-neutral-200
+              p-6 sm:p-10
+              transition-all
+              hover:shadow-2xl
+              hover:scale-[1.01]
+            "
+            style={{
+              fontFamily: "var(--font-cormorant-garamond), serif",
+              fontWeight: 400,
+            }}
+          >
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="text-4xl font-extrabold">{blog.title}</h2>
+              <p className="text-md">{blog.date}</p>
+            </div>
+
+            <p
+              className="mt-2 wrap-break-word"
+              style={{
+                fontFamily: "var(--font-workSans), serif",
+                fontWeight: 300,
+              }}
+            >
+              {blog.description}
+            </p>
+          </Link>
+        ))}
       </section>
-  )
-}
+    </section>
+  );
+};
 
-export default Blogpage
+export default Blogpage;
