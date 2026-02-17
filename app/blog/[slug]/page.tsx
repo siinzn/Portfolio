@@ -6,7 +6,7 @@ const Blogs = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const blogData = await getBlogData(slug);
   return (
-    <section className="mx-auto w-11/12 flex flex-col gap-16 mb-20 max-w-6xl mt-20">
+    <section className="mx-auto w-11/12 flex flex-col gap-16 mb-20 max-w-6xl mt-20 text-white">
       <div
         className="flex flex-col items-center justify-center "
         style={{
@@ -19,7 +19,7 @@ const Blogs = async ({ params }: { params: Promise<{ slug: string }> }) => {
             href={"/blog"}
             className="inline-flex items-center justify-center p-1 rounded-md "
           >
-            <ArrowLeftIcon width={20} className="h-5 w-5 text-neutral-800" />
+            <ArrowLeftIcon width={20} className="h-5 w-5 text-white" />
           </Link>
           <h1 className="text-4xl font-extrabold">{blogData.title}</h1>
         </div>
@@ -28,10 +28,17 @@ const Blogs = async ({ params }: { params: Promise<{ slug: string }> }) => {
       </div>
       <article
         className="
+        text-white
           prose 
           prose-neutral 
           max-w-none
           prose-headings:font-bold
+          prose-p:text-white
+          prose-h1:text-white
+          prose-h2:text-white
+          prose-h3:text-white
+          prose-a:text-white
+          prose-blue
           prose-h1:text-4xl
           prose-h2:text-3xl
           prose-p:font-light

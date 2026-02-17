@@ -62,7 +62,7 @@ export default function RootLayout({
       <body
         className={`
           ${cormorantGaramond.variable} ${poppins.variable} ${inter.variable} ${workSans.variable} ${spaceGrotesk.variable} ${outfit.variable} 
-          antialiased bg-neutral-200 overflow-y-scroll`}
+          antialiased bg-slate-900 overflow-y-scroll`}
         style={{ scrollbarGutter: "stable" }}
       >
         <Gradient />

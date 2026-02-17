@@ -1,6 +1,10 @@
 /* Import the complete Tailwind v4 CSS */
 @import "tailwindcss";
 
+/* Import Tailwind Typography plugin for prose classes */
+@plugin "@tailwindcss/typography";
+
 .prose {
   font-family: var(--font-inter), serif;
+  --tw-prose-bold: var(--color-white);
 }
