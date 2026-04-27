@@ -4,11 +4,12 @@ export default async function GitHubProjects() {
   const username = "siinzn";
 
   const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=5`,
+    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
     {
       next: { revalidate: 3600 },
       headers: {
         Accept: "application/vnd.github+json",
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
     },
   );
@@ -20,16 +21,16 @@ export default async function GitHubProjects() {
       <p className="text-red-400">Rate limit reached or user not found.</p>
     );
   }
-
+  /*
   const portfolioProjects = repos.filter((repo) =>
     repo.topics?.includes("portfolio"),
   );
-
+  */
   return (
     <section className="mb-32">
       <h2 className="text-3xl font-bold mb-8 text-purple-400">Projects</h2>
       <div className="grid gap-6">
-        {portfolioProjects.map((project) => (
+        {repos.map((project) => (
           <a
             key={project.id}
             href={project.html_url}

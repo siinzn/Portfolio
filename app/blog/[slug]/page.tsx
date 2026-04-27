@@ -10,7 +10,7 @@ const Blogs = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <div
         className="flex flex-col items-center justify-center "
         style={{
-          fontFamily: "var(--font-cormorant-garamond), serif",
+          fontFamily: "var(--font-outfit), serif",
           fontWeight: 400,
         }}
       >
@@ -21,7 +21,7 @@ const Blogs = async ({ params }: { params: Promise<{ slug: string }> }) => {
           >
             <ArrowLeftIcon width={20} className="h-5 w-5 text-white" />
           </Link>
-          <h1 className="text-4xl font-extrabold">{blogData.title}</h1>
+          <h1 className="text-4xl">{blogData.title}</h1>
         </div>
 
         <p className="text-md">{blogData.date.toString()}</p>
@@ -33,11 +33,12 @@ const Blogs = async ({ params }: { params: Promise<{ slug: string }> }) => {
           prose-neutral 
           max-w-none
           prose-headings:font-bold
-          prose-p:text-white
-          prose-h1:text-white
-          prose-h2:text-white
-          prose-h3:text-white
-          prose-a:text-white
+          prose-p:text-slate-300
+          prose-h1:text-slate-300
+          prose-h2:text-slate-300
+          prose-h3:text-slate-300
+          prose-ul:text-slate-300
+          prose-a:text-slate-300
           prose-blue
           prose-h1:text-4xl
           prose-h2:text-3xl
