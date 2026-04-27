@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Windows Monitor",
+    "description": "A program written in C++ to get real time updates on the cpu, memory and processes. This project utilizes the APIs provided by windows.",
+    "link": "https://github.com/siinzn/Windows-Monitor",
+    "language": "C++"
+  },
+  {
+    "id": 2,
+    "name": "Memory Allocator",
+    "description": "A custom memory allocator in C++ to learn more about memory and how it is managed. This memory allocator have an arena allocator, a stack allocator and pool allocator.",
+    "link": "https://github.com/siinzn/Memory-Allocator",
+    "language": "C++"
+  },
+  {
+    "id": 3,
+    "name": "Relyfe",
+    "description": "A email sender service where users can send an email instantly or schedule it to send later. It is made typescript.",
+    "link": "https://github.com/siinzn/Relyfe",
+    "language": "Typescript"
+  }
+]

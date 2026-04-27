@@ -1,6 +1,7 @@
 import { ExternalLink } from "lucide-react";
-
-export default async function GitHubProjects() {
+import projects from "../../projects.json";
+export default async function Projects() {
+  /*
   const username = "siinzn";
 
   const res = await fetch(
@@ -21,19 +22,20 @@ export default async function GitHubProjects() {
       <p className="text-red-400">Rate limit reached or user not found.</p>
     );
   }
-  /*
+  
   const portfolioProjects = repos.filter((repo) =>
     repo.topics?.includes("portfolio"),
   );
   */
+
   return (
     <section className="mb-32">
       <h2 className="text-3xl font-bold mb-8 text-purple-400">Projects</h2>
       <div className="grid gap-6">
-        {repos.map((project) => (
+        {projects.map((project) => (
           <a
             key={project.id}
-            href={project.html_url}
+            href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             className="group p-6 bg-slate-800/50 backdrop-blur-sm rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10"
@@ -55,14 +57,6 @@ export default async function GitHubProjects() {
                   {project.language}
                 </span>
               )}
-              {project.topics?.map((topic) => (
-                <span
-                  key={topic}
-                  className="px-3 py-1 text-sm bg-purple-900/30 text-purple-300 rounded-full"
-                >
-                  {topic}
-                </span>
-              ))}
             </div>
           </a>
         ))}

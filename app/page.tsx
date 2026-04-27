@@ -4,7 +4,7 @@ import {
   MapPinIcon,
 } from "@heroicons/react/24/outline";
 import { Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
-import GithubProjects from "./components/GithubProjects";
+import Projects from "./components/Projects";
 
 export default function Home() {
   return (
@@ -112,7 +112,7 @@ export default function Home() {
         </section>
 
         <section>
-          <GithubProjects />
+          <Projects />
         </section>
       </div>
     </>
