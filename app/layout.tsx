@@ -1,21 +1,13 @@
 import type { Metadata } from "next";
 import {
-  Cormorant_Garamond,
   Poppins,
   Inter,
-  Work_Sans,
   Space_Grotesk,
   Outfit,
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Gradient from "./components/Gradient";
-
-const cormorantGaramond = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-cormorant-garamond",
-  weight: ["300", "400", "600"],
-});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -29,16 +21,10 @@ const inter = Inter({
   weight: ["300", "400", "500"],
 });
 
-const workSans = Work_Sans({
-  subsets: ["latin"],
-  variable: "--font-workSans",
-  weight: ["300", "400", "500"],
-});
-
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-spaceGrotesk",
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const outfit = Outfit({
@@ -60,12 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`
-          ${cormorantGaramond.variable} ${poppins.variable} ${inter.variable} ${workSans.variable} ${spaceGrotesk.variable} ${outfit.variable} 
-          antialiased bg-slate-900 overflow-y-scroll`}
+        className={`${poppins.variable} ${inter.variable} ${spaceGrotesk.variable} ${outfit.variable} antialiased bg-black overflow-y-scroll`}
         style={{ scrollbarGutter: "stable" }}
       >
-        <Gradient />
         <Navbar />
         <div className="relative z-0 pt-16 px-4 sm:px-6 lg:px-8">
           {children}
