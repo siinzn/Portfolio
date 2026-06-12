@@ -1,48 +1,46 @@
 import Link from "next/link";
-import { ArrowLeftIcon } from "@heroicons/react/16/solid";
+import { ArrowLeftIcon, CalendarIcon } from "@heroicons/react/16/solid";
 import { getBlogData } from "@/lib/blog";
 
 const Blogs = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const blogData = await getBlogData(slug);
   return (
-    <section className="mx-auto w-11/12 flex flex-col gap-16 mb-20 max-w-6xl mt-20 text-white">
-      <div
-        className="flex flex-col items-center justify-center "
-        style={{
-          fontFamily: "var(--font-outfit), serif",
-          fontWeight: 400,
-        }}
-      >
-        <div className="flex flex-row gap-5">
-          <Link
-            href={"/blog"}
-            className="inline-flex items-center justify-center p-1 rounded-md "
-          >
-            <ArrowLeftIcon width={20} className="h-5 w-5 text-white" />
-          </Link>
-          <h1 className="text-4xl">{blogData.title}</h1>
-        </div>
-
-        <p className="text-md">{blogData.date.toString()}</p>
+    <section className="mx-auto max-w-4xl px-6 flex flex-col gap-16 mt-18 text-white">
+      <div className="flex flex-col gap-4">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-widest text-neutral-400 hover:text-white transition-colors w-fit"
+        >
+          <ArrowLeftIcon className="h-3.5 w-3.5" />
+          Back to Blogs
+        </Link>
+        <h1 className="text-4xl font-semibold leading-tight">{blogData.title}</h1>
+        <p className="inline-flex items-center gap-1.5 text-sm text-neutral-400">
+          <CalendarIcon className="h-4 w-4" />
+          {blogData.date.toString()}
+        </p>
       </div>
       <article
         className="
-        text-white
-          prose 
-          prose-neutral 
+          prose
+          prose-neutral
           max-w-none
-          prose-headings:font-bold
-          prose-p:text-slate-300
-          prose-h1:text-slate-300
-          prose-h2:text-slate-300
-          prose-h3:text-slate-300
-          prose-ul:text-slate-300
-          prose-a:text-slate-300
-          prose-blue
+          prose-headings:font-semibold
+          prose-headings:text-white
+          prose-p:text-white
+          prose-ul:text-white
+          prose-li:text-white
+          prose-a:text-white
           prose-h1:text-4xl
           prose-h2:text-3xl
           prose-p:font-light
+          prose-code:text-white
+          prose-code:before:content-none
+          prose-code:after:content-none
+          prose-code:bg-neutral-800
+          prose-code:p-1
+          prose-code:rounded-md
         "
         dangerouslySetInnerHTML={{ __html: blogData.contentHTML }}
       />

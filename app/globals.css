@@ -5,6 +5,7 @@
 @plugin "@tailwindcss/typography";
 
 .prose {
-  font-family: var(--font-inter), serif;
+  font-family: var(--font-sg), sans-serif;
   --tw-prose-bold: var(--color-white);
 }
+

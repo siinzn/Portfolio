@@ -41,5 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # content
-/content/blog/windowsx64debugger.md
 /content/blog/refract.md

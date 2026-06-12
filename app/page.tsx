@@ -84,29 +84,25 @@ export default function Home() {
       <div className="mx-auto w-full sm:w-11/12 md:max-w-4xl px-6 pb-20">
         <section className="mb-32">
           <h2 className="text-3xl font-bold mb-6 text-purple-400">About</h2>
-          <div className="text-slate-300 space-y-4 leading-relaxed">
+          <div className="text-slate-300 space-y-4 leading-relaxed text-pretty">
             <p>
-              I'm an aspiring systems programmer and backend developer
-              passionate about building high-performance software and exploring
-              computer graphics. Currently, I am focused on low-level
-              programming with C++ and building backends for the web with
-              JavaScript and Python.
+              I'm a systems programmer and backend developer building
+              high-performance software and exploring computer graphics.
+              Focused on low-level C++ and web backends with JavaScript and Python.
             </p>
             <p>
-              Apart from coding, I do motion graphics in After Effects, and I'm
-              keenly interested in watching YouTube videos from Sebastian Lague
-              and Pezzza's Work regarding graphical and simulational programs.
+              Outside of code I do motion graphics in After Effects and play football.
             </p>
           </div>
           <div className="mt-8 flex gap-4 justify-center">
             <span className="text-2xl text-slate-300 font-semibold">C++</span>
             <span className="text-slate-600">•</span>
             <span className="text-2xl text-slate-300 font-semibold">
-              JavaScript
+              Python
             </span>
             <span className="text-slate-600">•</span>
             <span className="text-2xl text-slate-300 font-semibold">
-              Python
+              JavaScript
             </span>
           </div>
         </section>

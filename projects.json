@@ -1,23 +1,30 @@
 [
   {
     "id": 1,
+    "name": "WindowsX64Debugger",
+    "description": "WindowsX64Debugger is a user-mode debugger for x64 Windows processes built using the Windows Debugging API and C++",
+    "link": "https://github.com/siinzn/WindowsX64Debugger",
+    "language": "C++"
+  },
+  {
+    "id": 2,
+    "name": "Refract",
+    "description": "Advanced NLP + RAG based audience intelligence engine in python focused on large-scale YouTube discussions related to Systems Programming.",
+    "link": "https://github.com/siinzn/Refract",
+    "language": "Python"
+  },
+  {
+    "id": 3,
     "name": "Windows Monitor",
     "description": "A program written in C++ to get real time updates on the cpu, memory and processes. This project utilizes the APIs provided by windows.",
     "link": "https://github.com/siinzn/Windows-Monitor",
     "language": "C++"
   },
   {
-    "id": 2,
+    "id": 4,
     "name": "Memory Allocator",
     "description": "A custom memory allocator in C++ to learn more about memory and how it is managed. This memory allocator have an arena allocator, a stack allocator and pool allocator.",
     "link": "https://github.com/siinzn/Memory-Allocator",
     "language": "C++"
-  },
-  {
-    "id": 3,
-    "name": "Relyfe",
-    "description": "A email sender service where users can send an email instantly or schedule it to send later. It is made typescript.",
-    "link": "https://github.com/siinzn/Relyfe",
-    "language": "Typescript"
   }
 ]
