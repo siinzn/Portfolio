@@ -87,11 +87,12 @@ export default function Home() {
           <div className="text-slate-300 space-y-4 leading-relaxed text-pretty">
             <p>
               I'm a systems programmer and backend developer building
-              high-performance software and exploring computer graphics.
-              Focused on low-level C++ and web backends with JavaScript and Python.
+              high-performance software and exploring computer graphics. Focused
+              on low-level C++ and web backends with JavaScript and Python.
             </p>
             <p>
-              Outside of code I do motion graphics in After Effects and play football.
+              Outside of code I do motion graphics in After Effects and play
+              football.
             </p>
           </div>
           <div className="mt-8 flex gap-4 justify-center">
