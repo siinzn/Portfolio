@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio — Muhammad Sinan",
+  title: "Portfolio - Muhammad Sinan",
   description: "Systems & Graphics Programmer | Backend Developer",
 };
 
@@ -31,9 +31,7 @@ export default function RootLayout({
       >
         <Navbar />
         {/* pt-16 offsets the fixed navbar (navbar ~64px tall) */}
-        <div className="pt-16">
-          {children}
-        </div>
+        <div className="pt-16">{children}</div>
       </body>
     </html>
   );
