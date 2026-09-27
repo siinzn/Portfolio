@@ -1,11 +1,90 @@
-/* Import the complete Tailwind v4 CSS */
 @import "tailwindcss";
-
-/* Import Tailwind Typography plugin for prose classes */
 @plugin "@tailwindcss/typography";
+
+html {
+  background: #0c0d0d;
+}
+
+body {
+  background-color: #0c0d0d;
+  background-image:
+    linear-gradient(rgba(145, 170, 145, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(145, 170, 145, 0.02) 1px, transparent 1px);
+  background-size: 54px 54px;
+  color: #f5f5f4;
+}
 
 .prose {
   font-family: var(--font-sg), sans-serif;
   --tw-prose-bold: var(--color-white);
 }
 
+.icon-link {
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(68 64 60 / 0.8);
+  color: rgb(168 162 158);
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.icon-link:hover {
+  border-color: rgb(113 139 115 / 0.8);
+  color: rgb(145 170 145);
+  transform: translateY(-2px);
+}
+
+.project-card {
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    transform 220ms ease;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card:hover {
+  border-color: rgb(113 139 115 / 0.75);
+  background-color: rgb(28 25 23 / 0.72);
+  transform: translateY(-3px);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}

@@ -1,66 +1,36 @@
 import { ExternalLink } from "lucide-react";
 import projects from "../../projects.json";
-export default async function Projects() {
-  /*
-  const username = "siinzn";
-
-  const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
-    {
-      next: { revalidate: 3600 },
-      headers: {
-        Accept: "application/vnd.github+json",
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-      },
-    },
-  );
-
-  const repos = await res.json();
-
-  if (!Array.isArray(repos)) {
-    return (
-      <p className="text-red-400">Rate limit reached or user not found.</p>
-    );
-  }
-  
-  const portfolioProjects = repos.filter((repo) =>
-    repo.topics?.includes("portfolio"),
-  );
-  */
-
+export default function Projects() {
   return (
-    <section className="mb-32">
-      <h2 className="text-3xl font-bold mb-8 text-purple-400">Projects</h2>
-      <div className="grid gap-6">
-        {projects.map((project) => (
-          <a
-            key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-6 bg-slate-800/50 backdrop-blur-sm rounded-lg border border-slate-700 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10"
-          >
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="text-xl text-white font-semibold group-hover:text-purple-400 transition-colors">
-                {project.name}
-              </h3>
-              <ExternalLink className="w-5 h-5 text-slate-500 group-hover:text-purple-400 transition-colors" />
-            </div>
+    <div className="grid gap-3 sm:grid-cols-2">
+      {projects.map((project) => (
+        <a
+          key={project.id}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-card group flex min-h-[205px] flex-col justify-between border border-stone-800/90 bg-stone-950/45 p-5 backdrop-blur-sm"
+        >
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="text-lg font-medium leading-tight text-stone-100 transition-colors group-hover:text-[#91aa91]">
+              {project.name}
+            </h3>
+            <ExternalLink className="h-4 w-4 shrink-0 text-stone-600 transition-colors group-hover:text-[#91aa91]" />
+          </div>
 
-            <p className="text-slate-400 mb-4">
-              {project.description || "Project created on GitHub."}
-            </p>
+          <p className="mt-6 text-sm leading-6 text-stone-500">
+            {project.description || "Project created on GitHub."}
+          </p>
 
-            <div className="flex flex-wrap gap-2">
-              {project.language && (
-                <span className="px-3 py-1 text-sm bg-slate-700/50 text-slate-300 rounded-full">
-                  {project.language}
-                </span>
-              )}
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {project.language && (
+              <span className="border border-stone-700 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-stone-400">
+                {project.language}
+              </span>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
   );
 }
