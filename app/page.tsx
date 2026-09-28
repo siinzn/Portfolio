@@ -1,117 +1,46 @@
-import {
-  EnvelopeIcon,
-  PhoneIcon,
-  MapPinIcon,
-} from "@heroicons/react/24/outline";
-import { Github, Linkedin, Twitter, ExternalLink } from "lucide-react";
-import Projects from "./components/Projects";
+import Antigravity from "./components/Antigravity";
+import PortfolioPanel from "./components/PortfolioPanel";
+import About from "./components/About";
+import { getBlogData, getSortBlogs } from "@/lib/blog";
 
-export default function Home() {
+export default async function Home() {
+  const blogs = await Promise.all(
+    getSortBlogs().map(async (blog) => ({
+      ...blog,
+      contentHTML: (await getBlogData(blog.id)).contentHTML,
+    })),
+  );
+
   return (
     <>
-      <main className="mx-auto w-full sm:w-11/12 md:max-w-4xl flex flex-col gap-4 min-h-screen justify-center items-center px-6">
-        <h1
-          className="text-white text-center font-extrabold text-4xl md:text-5xl"
-          style={{ fontFamily: "var(--font-outfit), serif", fontWeight: 500 }}
-        >
-          Hi, I'm <span className="text-purple-400">Muhammad Sinan</span>
-        </h1>
-        <p
-          className="text-center text-lg md:text-xl text-slate-400"
-          style={{ fontFamily: "var(--font-outfit), serif", fontWeight: 400 }}
-        >
-          Systems & Graphics Programmer | Backend Developer
-        </p>
-
-        <div className="flex flex-row justify-center items-center gap-5 mt-4 text-white">
-          <div className="flex gap-4">
-            <a
-              href="mailto:msinannoufal@gmail.com"
-              className="hover:text-purple-400 transition-colors"
-              title="Email"
-            >
-              <EnvelopeIcon className="w-5 h-5" />
-            </a>
-            <a
-              href="tel:+971521240054"
-              className="hover:text-purple-400 transition-colors"
-              title="Phone"
-            >
-              <PhoneIcon className="w-5 h-5" />
-            </a>
-            <div
-              className="cursor-default hover:text-purple-400 transition-colors"
-              title="Abu Dhabi, UAE"
-            >
-              <MapPinIcon className="w-5 h-5" />
-            </div>
-          </div>
-
-          <div className="w-px h-5 bg-slate-600" />
-
-          <div className="flex gap-4">
-            <a
-              href="https://github.com/siinzn"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Github"
-              className="hover:text-purple-400 transition-colors"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/siinzn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-400 transition-colors"
-              title="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="https://x.com/siinzn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-400 transition-colors"
-              title="Twitter"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
-          </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0 opacity-45"
+      >
+        <Antigravity
+          count={85}
+          magnetRadius={25}
+          ringRadius={13}
+          waveSpeed={0.4}
+          waveAmplitude={1}
+          particleSize={0.5}
+          lerpSpeed={0.07}
+          color="#607864"
+          autoAnimate
+          particleVariance={1}
+          rotationSpeed={0.1}
+          depthFactor={1}
+          pulseSpeed={5}
+          particleShape="tetrahedron"
+          fieldStrength={10}
+        />
+      </div>
+      <main className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1400px] items-center px-5 py-8 sm:px-8 lg:px-12">
+        <div className="grid w-full gap-8 lg:grid-cols-[minmax(280px,0.72fr)_minmax(620px,1.55fr)] lg:gap-16">
+          <About />
+          <PortfolioPanel blogs={blogs} />
         </div>
       </main>
-
-      <div className="mx-auto w-full sm:w-11/12 md:max-w-4xl px-6 pb-20">
-        <section className="mb-32">
-          <h2 className="text-3xl font-bold mb-6 text-purple-400">About</h2>
-          <div className="text-slate-300 space-y-4 leading-relaxed text-pretty">
-            <p>
-              I'm a systems programmer and backend developer building
-              high-performance software and exploring computer graphics. Focused
-              on low-level C++ and web backends with JavaScript and Python.
-            </p>
-            <p>
-              Outside of code I do motion graphics in After Effects and play
-              football.
-            </p>
-          </div>
-          <div className="mt-8 flex gap-4 justify-center">
-            <span className="text-2xl text-slate-300 font-semibold">C++</span>
-            <span className="text-slate-600">•</span>
-            <span className="text-2xl text-slate-300 font-semibold">
-              Python
-            </span>
-            <span className="text-slate-600">•</span>
-            <span className="text-2xl text-slate-300 font-semibold">
-              JavaScript
-            </span>
-          </div>
-        </section>
-
-        <section>
-          <Projects />
-        </section>
-      </div>
     </>
   );
 }

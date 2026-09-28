@@ -1,15 +1,11 @@
 import { getSortBlogs } from "@/lib/blog";
 import Link from "next/link";
 
-const SG = "var(--font-spaceGrotesk), sans-serif";
-
 const Blogpage = () => {
   const blogs = getSortBlogs();
 
   return (
-    <section
-      className="mx-auto max-w-4xl px-6 py-16 flex flex-col gap-10"
-    >
+    <section className="mx-auto max-w-4xl px-6 py-16 flex flex-col gap-10">
       <header>
         <h1 className="mt-1 text-2xl font-semibold text-white">
           Personal blogs
