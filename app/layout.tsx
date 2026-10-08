@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio - Muhammad Sinan",
+  title: "Muhammad Sinan",
   description: "Systems & Graphics Programmer | Backend Developer",
 };
 
